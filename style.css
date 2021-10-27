@@ -1,0 +1,71 @@
+body{
+    margin:0;
+    padding:0;
+    background: black;
+    perspective: 800px;
+}
+
+.ex1{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cube{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform-origin: 100px 100px 0;
+    animation-name: giroCubo;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    
+}
+
+.side{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    backface-visibility: hidden;
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 30px;
+}
+.front {
+    transform: translateZ(100px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+.back {
+    transform: rotateY(-180deg) translateZ(100px);
+}
+
+
+
+@keyframes giroCubo {
+    0%{
+        transform: rotateY(0deg);
+    }
+    100%{
+        transform: rotateY(360deg);
+    }
+}
